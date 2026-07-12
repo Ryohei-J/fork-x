@@ -26,7 +26,7 @@
 ## 品質・運用
 
 - [x] 計算ロジック（`src/lib/calculator/`）のユニットテストを追加する（Vitest、`pnpm test`）
-- [ ] Vercelへのデプロイ設定
+- [x] Vercelへのデプロイ設定（GitHub連携済み、`main`へのpushで自動デプロイ。本番: https://fork-x.vercel.app）
 - [ ] 制度改正時に `constants.ts` を更新する運用（年度更新のたびに数値を見直す）
 - [x] 低所得者向けの住民税非課税措置を反映する（合計所得金額が非課税限度額（全国共通の概算式、単身45万円+扶養1人あたり35万円等）以下なら均等割・所得割とも非課税にする。`calcResidentTax`）
 - [x] 国民健康保険の低所得者軽減措置（7割・5割・2割軽減）を反映する（均等割部分に全国共通の軽減判定基準（所得43万円＋α）を適用。`calcReductionRate`、freelance.ts）
