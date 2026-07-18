@@ -20,10 +20,10 @@
 
 - [x] **静的出力との互換性チェック**: `pnpm build`で`/out`が生成されエラーなし（フェーズ1で確認済み）。
 - [ ] **末尾スラッシュ・ルーティングの挙動差**: 静的ホスティングでは`/foo`と`/foo/`の扱いがVercelと微妙に異なる場合がある。デプロイ後に主要ページの直リンクアクセスを確認する。
-- [ ] **独自ドメインの有無**: 現状`fork-x.vercel.app`のVercelサブドメインのみ使用。独自ドメインを設定していないなら、Cloudflare側では新しい`*.workers.dev`のURLになる。
+- [x] **独自ドメインの有無**: Porkbunで`forkx.dev`を取得し、Cloudflareにゾーン追加・ネームサーバー切り替え・Workerへのカスタムドメイン紐付け済み。本番URLは`https://forkx.dev`。
 - [ ] **Vercelの解約タイミング**: 動作確認が終わるまでVercelのデプロイは残しておき、Cloudflare側で問題ないことを確認してから停止する（ロールバック手段を残すため）。
 - [x] **`robots.ts`/`sitemap.ts`の静的出力対応**: `output: "export"`では`generateStaticParams`のない動的メタルート（`/robots.txt`・`/sitemap.xml`）がそのままではビルドエラーになるため、両ファイルに`export const dynamic = "force-static"`を追加して解消済み。
-- [ ] **`sitemap.ts`/`robots.ts`にハードコードされた本番URL**: `src/app/sitemap.ts`の`BASE_URL`と`src/app/robots.ts`内のsitemap URLが`https://fork-x.vercel.app`に固定されている。独自ドメインまたは新しいURLに切り替える際は、この2箇所を更新し忘れないこと（本番URL確定時に対応）。
+- [x] **`sitemap.ts`/`robots.ts`にハードコードされた本番URL**: 本番URLが`https://forkx.dev`に確定したため、`src/app/sitemap.ts`の`BASE_URL`と`src/app/robots.ts`内のsitemap URLを更新済み。`README.md`の本番URL記載も更新済み。
 - [ ] **JSハイドレーション後の実動作確認**: ローカルで`serve out`により静的HTML配信・アセット参照までは確認済みだが、ブラウザでのJS実行（フォーム入力→計算結果表示などのクライアントサイド動作）は自動化ツールがなく未確認。人がブラウザで実際に操作して確認する必要がある。
 - [ ] **CloudflareダッシュボードのBuild/Deployコマンド設定**: 現状ダッシュボードには自動検出で`pnpm opennextjs-cloudflare build`が設定されている想定。これを`pnpm build`（ビルド）+ `wrangler deploy`（デプロイ、`wrangler.jsonc`のassets設定を読む）に変更する必要がある（フェーズ3参照）。
 
