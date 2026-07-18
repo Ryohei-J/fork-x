@@ -26,7 +26,7 @@ Google AdSenseの審査通過とその後の集客のため、コンテンツ（
 - [x] `src/app/articles/layout.tsx` + `src/app/articles/(posts)/layout.tsx`: Header・カードレイアウト・戻るリンクを共通化
 - [x] 記事メタ情報レジストリ（`src/lib/articles.ts`、title/description/slug/publishedAt）を1箇所にまとめる
 - [x] `sitemap.ts` に記事一覧・各記事を動的に含める
-- [ ] Google AnalyticsのgtagスクリプトをlayoutまたはHeaderに実装（測定IDを取得してから対応）
+- [x] Google Analyticsのgtagスクリプトを`layout.tsx`に実装（測定ID: `G-M38RP5FB3P`）
 
 ## フェーズ3: 記事コンテンツ
 
@@ -59,7 +59,7 @@ Google AdSenseの審査通過とその後の集客のため、コンテンツ（
 ## フェーズ4: 運用・申請
 
 - [ ] 記事を最低5〜6本公開してから審査申請（目安。少なすぎると却下されやすい）
-- [ ] Google Search Consoleにサイトマップを登録
+- [x] Google Search Consoleにサイトマップを登録（ドメインプロパティ、`https://forkx.dev/sitemap.xml`をフルURLで登録）
 - [ ] AdSense審査申請
 - [ ] 審査通過後、広告ユニットの配置（記事ページ中心、計算機ページは邪魔にならない位置に限定）
 
