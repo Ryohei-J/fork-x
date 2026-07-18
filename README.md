@@ -24,4 +24,4 @@ pnpm build   # 本番ビルド
 ## ドキュメント
 
 - [CLAUDE.md](CLAUDE.md) — プロジェクト概要・計算ロジックの方針
-- [TODO.md](TODO.md) — 精度向上・機能追加のタスク一覧
+- [TODO.md](docs/TODO.md) — 精度向上・機能追加のタスク一覧

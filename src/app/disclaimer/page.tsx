@@ -28,7 +28,7 @@ export default function DisclaimerPage() {
               具体的な前提条件はページ内の「この試算の前提条件」および
               {" "}
               <a
-                href="https://github.com/Ryohei-J/fork-x/blob/main/TODO.md"
+                href="https://github.com/Ryohei-J/fork-x/blob/main/docs/TODO.md"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-accent-600 underline hover:text-accent-700 dark:text-accent-400 dark:hover:text-accent-300"
