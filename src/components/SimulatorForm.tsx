@@ -7,7 +7,6 @@ import { DEFAULT_FREELANCE_EXPENSE_RATE } from "@/lib/calculator/constants";
 import type { IncomeInputMode, SimulatorInput, TaxFilingType } from "@/lib/calculator/types";
 import { validateInput } from "@/lib/calculator/validation";
 import { formatYen } from "@/lib/format";
-import { PREFECTURES } from "@/lib/prefectures";
 
 const STORAGE_KEY = "fork-x:simulator-input";
 
@@ -28,7 +27,6 @@ const DEFAULT_INPUT: SimulatorInput = {
   employeeMode: "annual",
   freelanceAmount: 6_000_000,
   freelanceMode: "annual",
-  prefecture: "東京都",
   dependents: 0,
   expenseRate: DEFAULT_FREELANCE_EXPENSE_RATE,
   taxFilingType: "blue",
@@ -166,7 +164,7 @@ export default function SimulatorForm() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             <div className="flex flex-col gap-2">
               <label htmlFor="expenseRate" className={FIELD_LABEL_CLASS_NAME}>
                 必要経費率
@@ -187,25 +185,6 @@ export default function SimulatorForm() {
                 <span className="text-sm text-zinc-500">%</span>
               </div>
               <FieldError message={errors.expenseRate} />
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <label htmlFor="prefecture" className={FIELD_LABEL_CLASS_NAME}>
-                居住地
-              </label>
-              <select
-                id="prefecture"
-                value={input.prefecture}
-                onChange={(e) => setInput((prev) => ({ ...prev, prefecture: e.target.value }))}
-                className={INPUT_CLASS_NAME}
-              >
-                {PREFECTURES.map((pref) => (
-                  <option key={pref} value={pref}>
-                    {pref}
-                  </option>
-                ))}
-              </select>
-              <p className="text-xs text-zinc-500">※ 参考表示のみ</p>
             </div>
 
             <div className="flex flex-col gap-2">
@@ -332,7 +311,6 @@ export default function SimulatorForm() {
             （入力で変更可能）
           </li>
           <li>・社会保険料は全国平均レートによる概算。健康保険料率や国民健康保険料は都道府県・自治体ごとの実際の差を反映していません</li>
-          <li>・居住地（都道府県）は現在参考表示のみで、計算には反映されません</li>
           <li>・個人事業税・消費税は未算入（免税事業者を前提）</li>
           <li>・介護保険料は40〜64歳のみ加算（年齢による他の控除の違いは未対応）</li>
           <li>

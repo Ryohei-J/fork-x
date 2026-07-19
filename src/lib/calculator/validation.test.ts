@@ -7,7 +7,6 @@ const VALID_INPUT: SimulatorInput = {
   employeeMode: "annual",
   freelanceAmount: 6_000_000,
   freelanceMode: "annual",
-  prefecture: "東京都",
   dependents: 0,
   expenseRate: 0.1,
   taxFilingType: "blue",

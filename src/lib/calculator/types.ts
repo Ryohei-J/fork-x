@@ -10,8 +10,6 @@ export interface SimulatorInput {
   freelanceAmount: number;
   /** freelanceAmount が年収か月額報酬か */
   freelanceMode: IncomeInputMode;
-  /** 居住地（都道府県）。今回の計算には使わず参考表示のみ */
-  prefecture: string;
   /** 扶養人数 */
   dependents: number;
   /** フリーランスの必要経費率（0〜1） */
