@@ -6,6 +6,7 @@ import { THEME_INIT_SCRIPT } from "@/lib/theme";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-M38RP5FB3P";
+const ADSENSE_CLIENT_ID = "ca-pub-3602855427708245";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,11 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <Script
