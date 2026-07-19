@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useSyncExternalStore } from "react";
+import AdmaxAd from "@/components/AdmaxAd";
 import { simulate } from "@/lib/calculator";
 import { DEFAULT_FREELANCE_EXPENSE_RATE } from "@/lib/calculator/constants";
 import type { IncomeInputMode, SimulatorInput, TaxFilingType } from "@/lib/calculator/types";
@@ -315,6 +316,8 @@ export default function SimulatorForm() {
           )}
         </div>
       </div>
+
+      <AdmaxAd />
 
       <details className={`group w-full ${CARD_CLASS_NAME} p-6`}>
         <summary className="flex cursor-pointer list-none items-center justify-between text-xs font-bold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
