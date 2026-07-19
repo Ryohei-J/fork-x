@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fork-x.vercel.app"),
+  metadataBase: new URL("https://forkx.dev"),
   title: "正社員 vs フリーランス 手取り比較シミュレーター",
   description: "年収・月報酬から正社員とフリーランスの手取りを概算で比較するシミュレーター",
 };

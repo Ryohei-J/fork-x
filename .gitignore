@@ -33,7 +33,7 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# vercel
+# vercel (ローカルにVercel CLIの紐付け情報が残っているため無視を維持)
 .vercel
 
 # cloudflare
